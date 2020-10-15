@@ -186,6 +186,8 @@ label nora_intro_label(the_person):
     the_person.char "We should bring it up to at least mastery level 2 before we go back to [the_nora.title]."
 
     mc.name "Understood. I'll be back once the testing is done."
+    nora.set_schedule(university, days=[0, 1, 2, 3, 4], times =[1,2,3])
+    nora.set_schedule(university, days=[5], times =[1,2])
     $ clear_scene()
 
     $ the_nora = None
@@ -228,8 +230,6 @@ label nora_research_up_label(the_person):
         list_of_nora_traits.remove(the_trait)
         del the_trait
 
-        nora.set_schedule(university, days=[0, 1, 2, 3, 4], times =[1,2,3])
-        nora.set_schedule(university, days=[5], times =[1,2])
         clear_scene()
 
         add_nora_research_intro_action(the_person)
